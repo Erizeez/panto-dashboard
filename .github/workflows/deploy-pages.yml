@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: read
-  packages: read
   pages: write
   id-token: write
 
@@ -20,20 +19,28 @@ jobs:
     name: Build Dashboard
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout dashboard
         uses: actions/checkout@v4
+
+      - name: Checkout panto-api
+        uses: actions/checkout@v4
+        with:
+          repository: Erizeez/panto-api
+          path: ../panto-api
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@erizeez'
+
+      - name: Build panto-api SDK
+        working-directory: ../panto-api/ts
+        run: |
+          npm install
+          npm run build
 
       - name: Install dependencies
         run: npm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Dashboard
         run: npm run build
