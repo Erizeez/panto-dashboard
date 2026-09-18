@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #0b0f17;
+  color: #e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   React Flow Controls & MiniMap 暗色主题沉浸式适配
+   ========================================================= */
+.react-flow__controls {
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.react-flow__controls-button {
+  background-color: #0f172a !important;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.7) !important;
+  color: #94a3b8 !important;
+  fill: #94a3b8 !important;
+  transition: all 0.15s ease !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  fill: #f8fafc !important;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none !important;
+}
+
+.react-flow__controls-button svg {
+  max-width: 14px !important;
+  max-height: 14px !important;
+  fill: currentColor !important;
+}
+
+/* MiniMap 缩略图容器与视口遮罩 */
+.react-flow__minimap {
+  background-color: rgba(11, 15, 23, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+  overflow: hidden !important;
+}
+
+.react-flow__minimap-mask {
+  fill: rgba(99, 102, 241, 0.15) !important;
+  stroke: rgba(99, 102, 241, 0.5) !important;
+  stroke-width: 1.5 !important;
+}
+
+.react-flow__minimap-node {
+  rx: 3px !important;
+  ry: 3px !important;
+}
